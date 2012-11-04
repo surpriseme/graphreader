@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="graphreader" default="all">
+	<target name="make.dirs" description="Make some dirs">
+		<mkdir dir="bin"/>
+		<mkdir dir="bin/class"/>
+	</target>
+
+	<target name="compile" description="compile java" depends="make.dirs">
+		<javac destdir="bin/class">
+			<src path="src"/>
+		</javac>
+	</target>
+
+	<target name="graphreader.jar" description="make jar file" depends="compile">
+		<copy todir="bin/class">
+			<fileset dir="src">
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+		<jar destfile="bin/graphreader.jar">
+			<manifest>
+				<attribute name="Main-Class"
+			            value="graphreader.Application"/>
+			</manifest>
+			<fileset dir="bin/class">
+				<include name="**/*.class"/>
+				<include name="**/*.png"/>
+				<include name="**/*.html"/>
+				<include name="**/*.gif"/>
+			</fileset>
+		</jar>
+	</target>
+
+	<target name="all" description="Do the build" depends="graphreader.jar"/>
+</project>

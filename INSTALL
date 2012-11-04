@@ -1,0 +1,18 @@
+Prerequisites for building the application:
+   Java Development Kit (http://java.com)
+   Apache Ant build tool (http://ant.apache.org/bindownload.cgi)
+
+Prerequisites for running the application:
+   Java Runtime Environment (http://java.com)
+
+Building:
+   Go to package root directory (the one containing graphreader.xml)
+     cd <GRAPHREADER_ROOT>
+   run command
+     ant -f graphreader.xml
+
+Running the application:
+   type
+     java -jar bin/graphreader.jar
+   in command line
+
