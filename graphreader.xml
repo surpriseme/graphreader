@@ -6,7 +6,7 @@
 	</target>
 
 	<target name="compile" description="compile java" depends="make.dirs">
-		<javac destdir="bin/class">
+		<javac destdir="bin/class" target="5" source="5">
 			<src path="src"/>
 		</javac>
 	</target>
